@@ -1,0 +1,4 @@
+#!/bin/sh
+echo $WINDOW >~/tmp/emacsclient-caller
+screen -r -X select Emacs
+emacsclient -n "$1"

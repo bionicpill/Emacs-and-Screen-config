@@ -1,0 +1,32 @@
+File Edit Options Buffers Tools Help
+# Suppress screen's startup message
+startup_message off
+
+# Define a bigger scrollback, default is 100 lines
+defscrollback 10000
+
+# An alternative hardstatus to display a bar at the bottom listing the
+# windownames and highlighting the current windowname in blue.
+hardstatus alwayslastline "%{.gw}%-w%0{.kg}%n %t%{-}%+w %=%{..b} %H %{..r} %m/%d %C%a "
+
+# Bell settings
+vbell_msg 'Boo Bam!'
+vbell off
+
+
+# Execute .bash_profile on startup
+shell -$SHELL
+
+# Use C-z instead of C-a as this makes more sense for Emacs
+escape ^za
+
+# Detach on hangup
+autodetach on
+
+# ------------------------------------------------------------------------------
+# STARTUP SCREENS
+# ------------------------------------------------------------------------------
+
+screen -t Shell 0 bash
+screen -t Emacs /usr/bin/emacs
+select 0
